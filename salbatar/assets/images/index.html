@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini-jeu WoW-like</title>
+
+  <!-- Police fantasy libre (look “WoW-like”) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fond -->
+  <div id="bg"></div>
+
+  <!-- Ecran d'accueil -->
+  <div id="menu" class="layer center">
+    <h1 class="title">
+      <span class="title-main">Salbataar</span>
+      <span class="title-sub">MYTHIC</span>
+    </h1>
+    <div class="mode-buttons">
+      <button id="normalModeBtn" class="btn">Mode normal</button>
+      <button id="infiniteModeBtn" class="btn">Mode infini</button>
+    </div>
+    <div class="easy-mode-container">
+      <input type="checkbox" id="easyModeCheckbox" class="easy-mode-checkbox">
+      <label for="easyModeCheckbox" class="easy-mode-label">Mode facile</label>
+    </div>
+  </div>
+
+  <!-- HUD (timer) -->
+  <div id="hud" class="layer">
+    <div id="timer" class="wow-gold timer">0.00 s</div>
+    <div id="counter" class="wow-gold counter">0/10</div>
+  </div>
+
+  <!-- Compte à rebours -->
+  <div id="countdown" class="layer center">
+    <div id="countText" class="wow-gold countdown-text"></div>
+  </div>
+
+  <!-- Canvas pour les 3 cercles orbitants -->
+  <canvas id="gameCanvas" class="layer"></canvas>
+
+  <!-- Image “ordre” (droite/gauche) -->
+  <img id="cueImage" class="layer cue" alt="cue" />
+
+  <!-- Résultat -->
+  <div id="result" class="layer center hidden">
+    <div id="resultText" class="wow-gold result-text"></div>
+    <button id="retryBtn" class="btn small">Menu principal</button>
+    <button id="restartBtn" class="btn small">Rejouer</button>
+  </div>
+
+  <!-- Écran de victoire -->
+  <div id="victory" class="layer center hidden">
+    <div id="victoryText" class="wow-gold victory-text">Victoire !</div>
+    <div id="victoryStats" class="wow-gold victory-stats"></div>
+    <button id="victoryRetryBtn" class="btn small">Rejouer</button>
+    <button id="victoryMenuBtn" class="btn small">Menu principal</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
